@@ -1070,21 +1070,6 @@
     }
   },
   {
-    "type": "string",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "escape_sequence",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "struct_declaration",
     "named": true,
     "fields": {
@@ -1314,10 +1299,6 @@
     }
   },
   {
-    "type": "\"",
-    "named": false
-  },
-  {
     "type": "#",
     "named": false
   },
@@ -1470,6 +1451,10 @@
   {
     "type": "str",
     "named": false
+  },
+  {
+    "type": "string",
+    "named": true
   },
   {
     "type": "true",

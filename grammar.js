@@ -279,7 +279,15 @@ module.exports = grammar({
       /0[bB][01][01_]*u?/,
       /[0-9][0-9_]*(\.[0-9][0-9_]*[fF]?|u)?/,
     )),
-    string: $ => seq("\"", repeat(choice($.escape_sequence, /[^"\\]/)), "\""),
+    string: _ => token(seq("\"", repeat(choice(
+      seq("\\", choice(
+        /[abfnrtv\\'"?]/,
+        /[0-9][0-9][0-9]/,
+        /x[0-9][0-9]/,
+        "0",
+      )),
+      /[^"\\\n]/,
+    )), "\"")),
     char: $ => seq("'", choice($.escape_sequence, /[^'\\]/), "'"),
     escape_sequence: _ => token(seq("\\", choice(
       /[abfnrtv\\'"?]/,

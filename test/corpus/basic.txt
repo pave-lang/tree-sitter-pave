@@ -77,3 +77,32 @@ test "truth" {
         (keyword)
         name: (identifier)
         value: (boolean)))))
+
+==================
+Strings with comment markers
+==================
+
+fn metadata() {
+  set_url("https://gyxos.com"); // real comment
+  set_text("not /* a comment */ either");
+}
+
+---
+
+(source_file
+  (function_declaration
+    keyword: (keyword)
+    name: (identifier)
+    parameters: (parameter_list)
+    body: (block
+      (expression_statement
+        (call_expression
+          function: (identifier)
+          arguments: (argument_list
+            (string))))
+      (line_comment)
+      (expression_statement
+        (call_expression
+          function: (identifier)
+          arguments: (argument_list
+            (string)))))))
