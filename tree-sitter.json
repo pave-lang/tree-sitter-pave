@@ -1,0 +1,22 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "pave",
+      "camelcase": "Pave",
+      "title": "Pave",
+      "scope": "source.pave",
+      "file-types": [
+        "pv",
+        "pave"
+      ],
+      "injection-regex": "^pave$",
+      "class-name": "TreeSitterPave"
+    }
+  ],
+  "metadata": {
+    "version": "0.0.1",
+    "license": "Apache-2.0",
+    "description": "Pave grammar for tree-sitter"
+  }
+}

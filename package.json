@@ -1,0 +1,31 @@
+{
+  "name": "tree-sitter-pave",
+  "version": "0.0.1",
+  "description": "Pave grammar for tree-sitter",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pave-lang/tree-sitter-pave"
+  },
+  "keywords": [
+    "pave",
+    "tree-sitter",
+    "parser",
+    "grammar"
+  ],
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "src/**",
+    "test/corpus/**",
+    "LICENSE"
+  ],
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.26.10"
+  }
+}

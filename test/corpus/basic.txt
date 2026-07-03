@@ -1,0 +1,79 @@
+==================
+Function
+==================
+
+fn add(left: i32, right: i32) -> i32 {
+  return left + right;
+}
+
+---
+
+(source_file
+  (function_declaration
+    keyword: (keyword)
+    name: (identifier)
+    parameters: (parameter_list
+      (parameter
+        name: (identifier)
+        type: (primitive_type))
+      (parameter
+        name: (identifier)
+        type: (primitive_type)))
+    (primitive_type)
+    body: (block
+      (control_statement
+        (keyword)
+        (binary_expression
+          left: (identifier)
+          operator: (operator)
+          right: (identifier))))))
+
+==================
+Declarations
+==================
+
+struct Point {
+  let x: f64;
+  let y: f64;
+}
+
+enum Option {
+  Some
+  None
+}
+
+test "truth" {
+  let value = true;
+}
+
+---
+
+(source_file
+  (struct_declaration
+    (keyword)
+    name: (identifier)
+    (block
+      (let_declaration
+        (keyword)
+        name: (identifier)
+        type: (primitive_type))
+      (let_declaration
+        (keyword)
+        name: (identifier)
+        type: (primitive_type))))
+  (enum_declaration
+    (keyword)
+    name: (identifier)
+    (block
+      (expression_statement
+        (identifier))
+      (expression_statement
+        (identifier))))
+  (test_declaration
+    (keyword)
+    name: (string)
+    (block
+      (let_declaration
+        (keyword)
+        name: (identifier)
+        value: (boolean)))))
