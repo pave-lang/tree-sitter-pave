@@ -26,6 +26,7 @@ module.exports = grammar({
 
     _item: $ => choice(
       $.cpp_block,
+      $.preproc_if,
       $.preproc_directive,
       $.module_directive,
       $.function_declaration,
@@ -52,6 +53,26 @@ module.exports = grammar({
       "#",
       "include",
       optional($._preproc_body),
+    ),
+
+    preproc_if: $ => seq(
+      field("directive", alias(choice("#if", "#ifdef", "#ifndef"), $.preproc_directive)),
+      optional(field("condition", alias($._preproc_body, $.preproc_condition))),
+      repeat($._item),
+      repeat($.preproc_elif),
+      optional($.preproc_else),
+      field("endif", alias("#endif", $.preproc_directive)),
+    ),
+
+    preproc_elif: $ => seq(
+      alias("#elif", $.preproc_directive),
+      optional(field("condition", alias($._preproc_body, $.preproc_condition))),
+      repeat($._item),
+    ),
+
+    preproc_else: $ => seq(
+      alias("#else", $.preproc_directive),
+      repeat($._item),
     ),
 
     module_directive: $ => prec.right(seq(

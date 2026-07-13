@@ -106,3 +106,78 @@ fn metadata() {
           function: (identifier)
           arguments: (argument_list
             (string)))))))
+
+==================
+Preprocessor conditionals
+==================
+
+#ifdef WINDOWS
+fn platform() {
+  #if DEBUG
+  trace();
+  #elif RELEASE
+  optimize();
+  #else
+  log();
+  #endif
+}
+#elif LINUX
+fn platform() {}
+#else
+#ifndef EMBEDDED
+fn platform() {}
+#endif
+#endif
+
+---
+
+(source_file
+  (preproc_if
+    directive: (preproc_directive)
+    condition: (preproc_condition)
+    (function_declaration
+      keyword: (keyword)
+      name: (identifier)
+      parameters: (parameter_list)
+      body: (block
+        (preproc_if
+          directive: (preproc_directive)
+          condition: (preproc_condition)
+          (expression_statement
+            (call_expression
+              function: (identifier)
+              arguments: (argument_list)))
+          (preproc_elif
+            (preproc_directive)
+            condition: (preproc_condition)
+            (expression_statement
+              (call_expression
+                function: (identifier)
+                arguments: (argument_list))))
+          (preproc_else
+            (preproc_directive)
+            (expression_statement
+              (call_expression
+                function: (identifier)
+                arguments: (argument_list))))
+          endif: (preproc_directive))))
+    (preproc_elif
+      (preproc_directive)
+      condition: (preproc_condition)
+      (function_declaration
+        keyword: (keyword)
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block)))
+    (preproc_else
+      (preproc_directive)
+      (preproc_if
+        directive: (preproc_directive)
+        condition: (preproc_condition)
+        (function_declaration
+          keyword: (keyword)
+          name: (identifier)
+          parameters: (parameter_list)
+          body: (block))
+        endif: (preproc_directive)))
+    endif: (preproc_directive)))

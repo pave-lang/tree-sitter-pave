@@ -323,6 +323,10 @@
           "named": true
         },
         {
+          "type": "preproc_if",
+          "named": true
+        },
+        {
           "type": "struct_declaration",
           "named": true
         },
@@ -514,6 +518,10 @@
         },
         {
           "type": "preproc_directive",
+          "named": true
+        },
+        {
+          "type": "preproc_if",
           "named": true
         },
         {
@@ -1001,6 +1009,257 @@
     "fields": {}
   },
   {
+    "type": "preproc_elif",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "preproc_condition",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "control_statement",
+          "named": true
+        },
+        {
+          "type": "cpp_block",
+          "named": true
+        },
+        {
+          "type": "enum_declaration",
+          "named": true
+        },
+        {
+          "type": "expression_statement",
+          "named": true
+        },
+        {
+          "type": "function_declaration",
+          "named": true
+        },
+        {
+          "type": "impl_declaration",
+          "named": true
+        },
+        {
+          "type": "let_declaration",
+          "named": true
+        },
+        {
+          "type": "module_directive",
+          "named": true
+        },
+        {
+          "type": "preproc_directive",
+          "named": true
+        },
+        {
+          "type": "preproc_if",
+          "named": true
+        },
+        {
+          "type": "struct_declaration",
+          "named": true
+        },
+        {
+          "type": "test_declaration",
+          "named": true
+        },
+        {
+          "type": "trait_declaration",
+          "named": true
+        },
+        {
+          "type": "typedef_declaration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "preproc_else",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "control_statement",
+          "named": true
+        },
+        {
+          "type": "cpp_block",
+          "named": true
+        },
+        {
+          "type": "enum_declaration",
+          "named": true
+        },
+        {
+          "type": "expression_statement",
+          "named": true
+        },
+        {
+          "type": "function_declaration",
+          "named": true
+        },
+        {
+          "type": "impl_declaration",
+          "named": true
+        },
+        {
+          "type": "let_declaration",
+          "named": true
+        },
+        {
+          "type": "module_directive",
+          "named": true
+        },
+        {
+          "type": "preproc_directive",
+          "named": true
+        },
+        {
+          "type": "preproc_if",
+          "named": true
+        },
+        {
+          "type": "struct_declaration",
+          "named": true
+        },
+        {
+          "type": "test_declaration",
+          "named": true
+        },
+        {
+          "type": "trait_declaration",
+          "named": true
+        },
+        {
+          "type": "typedef_declaration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "preproc_if",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "preproc_condition",
+            "named": true
+          }
+        ]
+      },
+      "directive": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "preproc_directive",
+            "named": true
+          }
+        ]
+      },
+      "endif": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "preproc_directive",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "control_statement",
+          "named": true
+        },
+        {
+          "type": "cpp_block",
+          "named": true
+        },
+        {
+          "type": "enum_declaration",
+          "named": true
+        },
+        {
+          "type": "expression_statement",
+          "named": true
+        },
+        {
+          "type": "function_declaration",
+          "named": true
+        },
+        {
+          "type": "impl_declaration",
+          "named": true
+        },
+        {
+          "type": "let_declaration",
+          "named": true
+        },
+        {
+          "type": "module_directive",
+          "named": true
+        },
+        {
+          "type": "preproc_directive",
+          "named": true
+        },
+        {
+          "type": "preproc_elif",
+          "named": true
+        },
+        {
+          "type": "preproc_else",
+          "named": true
+        },
+        {
+          "type": "preproc_if",
+          "named": true
+        },
+        {
+          "type": "struct_declaration",
+          "named": true
+        },
+        {
+          "type": "test_declaration",
+          "named": true
+        },
+        {
+          "type": "trait_declaration",
+          "named": true
+        },
+        {
+          "type": "typedef_declaration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "primitive_type",
     "named": true,
     "fields": {}
@@ -1048,6 +1307,10 @@
         },
         {
           "type": "preproc_directive",
+          "named": true
+        },
+        {
+          "type": "preproc_if",
           "named": true
         },
         {
@@ -1442,6 +1705,10 @@
   },
   {
     "type": "operator",
+    "named": true
+  },
+  {
+    "type": "preproc_condition",
     "named": true
   },
   {
